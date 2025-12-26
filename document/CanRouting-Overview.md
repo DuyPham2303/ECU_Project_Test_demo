@@ -8,12 +8,6 @@ Mục tiêu là làm rõ cách một thông điệp CAN được:
 - Giải mã (decode)
 - Đóng gói theo chuẩn PDU
 - Điều phối đến đúng mô-đun chức năng để xử lý
-
-Nội dung phù hợp cho:
-- Giảng dạy Communication Stack
-- Phân tích luồng dữ liệu CAN trong ECU
-- Hiểu vai trò của CAN Driver, CanIf, PduR, COM, DCM
-
 ---
 
 ## 2. Vấn đề cần giải quyết trong giao tiếp CAN
