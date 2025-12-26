@@ -1,5 +1,5 @@
 /***************************************************************************
- * @file    ADC_h
+ * @file    CAN_h
  * @brief   file này cung cấp các API để Mô phỏng truyền/nhận frame CAN qua chuỗi ở file csv
  * @version 1.0
  * @date    2024-09-11
@@ -8,24 +8,32 @@
  ***************************************************************************/
 #ifndef CAN_H
 #define CAN_H
+#include "StdTypes.h"
+#include <string.h>
 #include <stdint.h>
-typedef enum{
-    E_OK,
-    E_NOT_OK
-}Std_ReturnType;
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+/**
+ * @brief   Cấu trúc tối giản cho CAN driver (MCAL).
+ *          Chỉ chứa duy nhất một controller.
+ */
+typedef struct {
+    struct {
+        uint8_t  ControllerId;   /* ID của controller (ví dụ 0) */
+        uint32_t BaudRate;       /* Baudrate, ví dụ 500000 */
+    } ControllerConfig[1];
+} Can_ConfigType;
 /*
  * @brief   Khởi tạo giao thức CAN 
  * @return  void
  */
-void Can_Init(void);
-/*
- * @brief   đọc can frame qua chuỗi ờ file.csv
- * details  đọc và parse key "can" trên csv
- * @param  canID ID của CAN
- * @param  data  con trỏ đến dữ liệu đọc về
- * @param  dlc   con trỏ đến 
- * @return Std_ReturnType trả về E_OK hoặc E_NOT_OK
- */
-Std_ReturnType Can_Receive(uint32_t* canId, uint8_t* data, uint8_t* dlc); 
+void Can_Init(const Can_ConfigType *ConfigPtr);
+
+//Hàm gọi loop liên tục để đọc CAN frame
+void Can_MainFunction_Read();
+
+Std_ReturnType Can_Receive(char* buf,uint32_t *canId, uint8_t *data, uint8_t *dlc);
 
 #endif // CAN_H

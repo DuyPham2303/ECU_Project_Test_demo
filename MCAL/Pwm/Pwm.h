@@ -12,8 +12,6 @@
 #include <stdint.h>
 /*
  * @brief   Khởi tạo PWM
- * @param   key   chuỗi key cần ghi value
- * @param   value giá trị số nguyên ghi vào key
  * @return  void
  */
 void Pwm_Init(void);

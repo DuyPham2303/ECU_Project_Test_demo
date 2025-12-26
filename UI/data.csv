@@ -1,1 +1,8 @@
-# File giao tiếp mô phỏng input/output
+temp,512
+voltage,2989
+current,493
+torque,563
+rpm,594
+duty,78
+direction,1
+can,0x3F0 8 03 C0 12 00 00 00 00 00

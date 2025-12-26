@@ -8,6 +8,7 @@
  ***************************************************************************/
 #ifndef CSV_IO_H
 #define CSV_IO_H
+#include <stddef.h>
 
 /*
  * @brief   Trả về giá trị số nguyên ứng với key (ví dụ "temp" → 512).
@@ -28,4 +29,12 @@ void csv_setInt(const char* key, int value);
  * @return  const char* chuỗi CAN frame
  */
 const char* csv_getString(const char* key);
+
+/*
+ * @brief  Đọc chuỗi và parse vào từng byte dữ liệu tổ chức ở dạng mảng
+ * @param  key   chuỗi key xác định đối tượng sẽ parse dữ liệu
+ * @param  frame con trỏ tới mảng dữ liệu đã parse vào từng byte
+ * @param  size_t kích thước của frame
+ */
+void csv_getChar(const char* key,char* frame,size_t FrameSize);
 #endif // CSV_IO_H

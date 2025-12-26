@@ -9,6 +9,7 @@
 #ifndef ADC_H
 #define ADC_H
 #include <stdint.h>
+
 /*
  * @brief   Khởi tạo ADC để đọc dữ liệu của các cảm biến
  * @return  void

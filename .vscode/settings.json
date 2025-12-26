@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "pwm.h": "c",
+        "can.h": "c",
+        "pdur.h": "c",
+        "com.h": "c",
+        "stdtypes.h": "c"
+    }
+}

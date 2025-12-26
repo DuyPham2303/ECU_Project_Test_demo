@@ -25,7 +25,7 @@ void Dio_Init(void);
  * @param   level       mức điện áp xuất ra là 1 hoặc 0
  * @return  void
  */
-void Dio_WriteChannel(uint8_t channelId, uint8_t level);
+void Dio_WriteChannel(uint8_t channelId, int level);
 
 
 #endif // DIO_H
