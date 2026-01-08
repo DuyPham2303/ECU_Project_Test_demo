@@ -1,10 +1,5 @@
 # PduR Routing Mechanism – Downstreaming & Upstreaming
-
-Tài liệu này bổ sung phần **giải thích trực quan (theo ví dụ đời thực)** cho cơ chế định tuyến của **PDU Router (PduR)** trong AUTOSAR Classic, nhằm giúp người học dễ hình dung vai trò của PduR trong hệ thống ECU.
-
----
-
-## 1. Downstreaming (Định tuyến xuống) – Từ “Não bộ” ra “Hành động”
+## 1. Downstreaming (Định tuyến xuống) Từ “logic nghiệp vụ xử lý tín hiệu” gửi xuống “bus truyền thông mạng”
 
 ### Tình huống thực tế
 Người lái xe nhấn **nút tăng âm lượng** trên vô lăng.
@@ -21,7 +16,7 @@ Tăng âm lượng +1
 - Máy tính trung tâm của xe (Head Unit / ECU trung tâm) tạo ra một PDU chứa lệnh **“Tăng âm lượng”**.
 - Ứng dụng **không quan tâm** lệnh này sẽ được gửi qua CAN hay Ethernet.
 
-#### PduR – “Nhân viên bưu tá”
+#### PduR – “Nhân viên phân loại và gửi kiện hàng”
 - PduR nhận PDU từ lớp trên.
 - Dựa vào **bảng định tuyến (Routing Table)** đã cấu hình:
   - PduR biết rằng **hệ thống âm thanh** nằm trên **mạng Ethernet**.
@@ -45,11 +40,11 @@ PduR đảm bảo rằng:
   - Hệ thống điều hòa
   - Hay ECU không liên quan
 
-➡️ **PduR đóng vai trò quyết định luồng dữ liệu từ logic điều khiển → hành động vật lý.**
+**=> PduR đóng vai trò quyết định luồng dữ liệu từ logic điều khiển → hành động vật lý.**
 
 ---
 
-## 2. Upstreaming (Định tuyến lên) – Từ “Cảm biến” về “Não bộ”
+## 2. Upstreaming (Định tuyến lên) – Từ “Cảm biến” gửi đến “logic nghiệp vụ”
 
 ### Tình huống thực tế
 Cảm biến áp suất lốp phát hiện:
@@ -72,7 +67,7 @@ Một gói tin chứa dữ liệu:
   - Nhưng rất bền và ổn định
   - Phù hợp cho dữ liệu an toàn
 
-#### PduR – “Nhân viên bưu tá”
+#### PduR – “Nhân viên phân loại và gửi kiện hàng”
 - PduR nhận PDU từ **CAN Interface**.
 - Kiểm tra bảng định tuyến và xác định:
   - Thông tin này cần gửi đến:
@@ -97,7 +92,7 @@ PduR:
   - Ra quyết định
   - Cảnh báo kịp thời cho con người
 
-➡️ **PduR là cầu nối giữa thế giới vật lý (sensor) và trí tuệ xử lý (application).**
+**=> PduR là cầu nối giữa tín hiệu vật lý (sensor) và logic nghiệp vụ xử lý (application).**
 
 ---
 
@@ -110,7 +105,7 @@ PduR:
 
 ---
 
-📌 **Ghi chú cho giảng dạy**
+**Tóm tắt Các đặc điểm của Pdu Router **
 - Có thể ví PduR như **nhân viên bưu tá thông minh**
 - Không tạo dữ liệu
 - Không xử lý logic nghiệp vụ
