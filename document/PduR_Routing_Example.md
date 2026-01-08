@@ -29,12 +29,9 @@ Tăng âm lượng +1
 - Gói tin được truyền qua Ethernet đến ECU điều khiển loa.
 - Loa nhận lệnh và **âm lượng tăng lên**.
 
-### Kết quả
-- Âm thanh lớn hơn ngay lập tức.
-
 ### Ý nghĩa
 PduR đảm bảo rằng:
-- Lệnh từ “não bộ” được gửi **đúng nơi**
+- Lệnh từ “Application” được gửi **đúng nơi**
 - Không bị gửi nhầm sang:
   - Hệ thống phanh
   - Hệ thống điều hòa
@@ -62,10 +59,6 @@ Một gói tin chứa dữ liệu:
 
 #### Lớp dưới – Cảm biến / Network (CAN)
 - Cảm biến áp suất lốp gửi dữ liệu qua **CAN bus**.
-- CAN là:
-  - Tốc độ không cao
-  - Nhưng rất bền và ổn định
-  - Phù hợp cho dữ liệu an toàn
 
 #### PduR – “Nhân viên phân loại và gửi kiện hàng”
 - PduR nhận PDU từ **CAN Interface**.
@@ -105,7 +98,7 @@ PduR:
 
 ---
 
-**Tóm tắt Các đặc điểm của Pdu Router **
+**Tóm tắt Các đặc điểm của Pdu Router**
 - Có thể ví PduR như **nhân viên bưu tá thông minh**
 - Không tạo dữ liệu
 - Không xử lý logic nghiệp vụ
